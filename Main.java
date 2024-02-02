@@ -1,4 +1,3 @@
-
 /*
  * This is a simple guessing program.
  * The program is meant to be a reference for beginners
