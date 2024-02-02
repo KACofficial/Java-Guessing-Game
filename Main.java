@@ -17,27 +17,27 @@ public class Main {
         int guessNum = 1;
         int guess;
         Scanner guessObj = new Scanner(System.in);
-        System.out.println("[*] You have 10 trys to guess a random number between 1 and 100, good luck");
-        while(!outOfGuesses && guessNum<=maxGuesses) {
-            System.out.print("[?] Guess["+guessNum+"]: ");
+        System.out.println("[*] You have 10 tries to guess a random number between 1 and 100, good luck");
+        while (!outOfGuesses && guessNum <= maxGuesses) {
+            System.out.print("[?] Guess[" + guessNum + "]: ");
             try {
                 guess = Integer.parseInt(guessObj.nextLine());
-            } catch(NumberFormatException e) {
+            } catch (NumberFormatException e) {
                 System.out.println("[!] Invalid Guess.");
                 continue;
             }
-            if(guess==Answer) {
+            if (guess == Answer) {
                 System.out.println("[*] YOU WIN!!!!");
                 guessObj.close();
                 return;
-            } else if(guess<Answer) {
+            } else if (guess < Answer) {
                 System.out.println("[*] Higher");
-            } else if(guess>Answer) {
+            } else if (guess > Answer) {
                 System.out.println("[*] Lower");
             }
             guessNum += 1;
         }
-        System.out.println("[!] You Lose, the answer was "+Answer+".");
+        System.out.println("[!] You Lose, the answer was " + Answer + ".");
         guessObj.close();
     }
 }
